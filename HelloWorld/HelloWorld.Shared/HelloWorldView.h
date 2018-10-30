@@ -13,7 +13,6 @@ namespace HelloWorld {
 
 		bool m_IsVblankEnabled;
 		bool m_IsFullscreen;
-		bool m_IsOverlayActivated;
 		Xe::ObjPtr<Xe::Graphics::ISurface> m_TexHelloWorld;
 
 		void Draw();
@@ -55,7 +54,5 @@ namespace HelloWorld {
 		void OnPointerEnter(const Xe::IO::PointerEvent& e);
 		void OnPointerLeave(const Xe::IO::PointerEvent& e);
 		void OnPointerWheel(const Xe::Math::Vector2<float>& wheel);
-
-		void OnGameOverlayActivated(bool activated);
 	};
 }

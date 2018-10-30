@@ -13,7 +13,6 @@ namespace Empty {
 
 		bool m_IsVblankEnabled;
 		bool m_IsFullscreen;
-		bool m_IsOverlayActivated;
 
 		void Draw();
 		void SwapBuffer(bool isVblankEnabled);
@@ -48,7 +47,5 @@ namespace Empty {
 		void OnPointerEnter(const Xe::IO::PointerEvent& e);
 		void OnPointerLeave(const Xe::IO::PointerEvent& e);
 		void OnPointerWheel(const Xe::Math::Vector2<float>& wheel);
-
-		void OnGameOverlayActivated(bool activated);
 	};
 }

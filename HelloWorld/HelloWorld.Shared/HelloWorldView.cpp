@@ -42,15 +42,14 @@ namespace HelloWorld
 		m_pFrameView(nullptr),
 		m_pContext(nullptr),
 		m_IsVblankEnabled(true),
-		m_IsFullscreen(false),
-		m_IsOverlayActivated(false)
+		m_IsFullscreen(false)
 	{
-		// Use destructor to deallocate everything not destroyed by OnDestroy.
-		if (m_pFrameView) m_pFrameView->Release();
 	}
 
 	HelloWorldView::~HelloWorldView()
 	{
+		// Use destructor to deallocate everything not destroyed by OnDestroy.
+		if (m_pFrameView) m_pFrameView->Release();
 	}
 
 	bool HelloWorldView::OnAttach(Xe::Core::IFrameView* pFrameView)
@@ -115,10 +114,7 @@ namespace HelloWorld
 					if (deltaTime > DELTATIME_TRESHOLD)
 						deltaTime = DELTATIME_TRESHOLD;
 
-					if (!m_IsOverlayActivated)
-					{
-						// Process the logic
-					}
+					// Process the logic
 
 					Draw();
 					SwapBuffer(m_IsVblankEnabled);
@@ -223,11 +219,6 @@ namespace HelloWorld
 
 	void HelloWorldView::OnPointerWheel(const Math::Vector2<float>& wheel)
 	{
-	}
-
-	void HelloWorldView::OnGameOverlayActivated(bool activated)
-	{
-		m_IsOverlayActivated = activated;
 	}
 
 	bool HelloWorldView::LoadImage(Xe::Graphics::Imaging::IImage** ppImage, Xe::Storage::IStorage* pStorage, ctstring fileName)

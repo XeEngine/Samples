@@ -37,15 +37,14 @@ namespace Empty
 		m_pFrameView(nullptr),
 		m_pContext(nullptr),
 		m_IsVblankEnabled(true),
-		m_IsFullscreen(false),
-		m_IsOverlayActivated(false)
+		m_IsFullscreen(false)
 	{
-		// Use destructor to deallocate everything not destroyed by OnDestroy.
-		if (m_pFrameView) m_pFrameView->Release();
 	}
 
 	EmptyView::~EmptyView()
 	{
+		// Use destructor to deallocate everything not destroyed by OnDestroy.
+		if (m_pFrameView) m_pFrameView->Release();
 	}
 
 	bool EmptyView::OnAttach(Xe::Core::IFrameView* pFrameView)
@@ -104,10 +103,7 @@ namespace Empty
 					if (deltaTime > DELTATIME_TRESHOLD)
 						deltaTime = DELTATIME_TRESHOLD;
 
-					if (!m_IsOverlayActivated)
-					{
-						// Process the logic
-					}
+					// Process the logic
 
 					Draw();
 					SwapBuffer(m_IsVblankEnabled);
@@ -212,11 +208,6 @@ namespace Empty
 
 	void EmptyView::OnPointerWheel(const Math::Vector2<float>& wheel)
 	{
-	}
-
-	void EmptyView::OnGameOverlayActivated(bool activated)
-	{
-		m_IsOverlayActivated = activated;
 	}
 
 	void EmptyView::Draw() {
