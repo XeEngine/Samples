@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ImGuiSampleView.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FrameHelloWorld.cpp">
+      <Filter>Frames</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FrameEngineInfo.cpp">
+      <Filter>Frames</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ImGuiSampleView.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FrameHelloWorld.h">
+      <Filter>Frames</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FrameEngineInfo.h">
+      <Filter>Frames</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Frames">
+      <UniqueIdentifier>{665a0fa7-4cc5-471d-9b4a-36356396d91e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
