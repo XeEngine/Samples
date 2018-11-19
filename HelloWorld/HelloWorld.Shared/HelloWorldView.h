@@ -1,5 +1,6 @@
 #pragma once
 #include <XeSDK.h>
+#include <XeGame.h>
 
 namespace HelloWorld {
 	class HelloWorldView :
@@ -10,6 +11,7 @@ namespace HelloWorld {
 	{
 		Xe::Core::IFrameView* m_pFrameView;
 		Xe::Graphics::IContext* m_pContext;
+		Xe::ObjPtr<Xe::Game::IDrawing2d> m_Drawing;
 
 		bool m_IsVblankEnabled;
 		bool m_IsFullscreen;

@@ -7,7 +7,7 @@ namespace ImGuiSample {
 		public Xe::Core::IApplicationHandler,
 		public Xe::Core::IFrameHandler
 	{
-		Xe::ObjPtr < Xe::Core::IFrameView> m_pFrameView;
+		Xe::ObjPtr<Xe::Core::IFrameView> m_pFrameView;
 		Xe::ObjPtr<Xe::Graphics::IContext> m_pContext;
 		Xe::Game::ImGuiHandler* m_ImGuiHandler;
 		std::list<Xe::IDelegate<const Xe::Game::ImGuiFrameArgs&>*> m_Frames;

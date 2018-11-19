@@ -66,8 +66,8 @@ namespace HelloWorld
 		Xe::Graphics::ContextInitDesc contextInitDesc;
 		contextInitDesc.FrameView = m_pFrameView;
 
-		auto renderingDrivers = Xe::Drivers::GetDrivers(Xe::Drivers::DriverTypeFilter_Rendering);
-		auto defaultRenderingDriver = (Xe::Drivers::Rendering::IRenderingDriver*)*renderingDrivers.begin();
+		auto renderingDrivers = Xe::Drivers::GetDrivers<Xe::Drivers::IRenderingDriver>();
+		auto defaultRenderingDriver = *renderingDrivers.begin();
 		
 		if (!defaultRenderingDriver->Factory(&m_pContext, contextInitDesc))
 		{
@@ -88,6 +88,9 @@ namespace HelloWorld
 		{
 			LoadResources(storage);
 		}
+
+		// Initialize the drawing helper from XeGame library
+		Xe::Game::Factory(&m_Drawing, m_pContext);
 
 		return true;
 	}
@@ -259,8 +262,6 @@ namespace HelloWorld
 	void HelloWorldView::Draw() {
 		m_pContext->Clear(Graphics::Clear_Color | Graphics::Clear_Depth | Graphics::Clear_Stencil);
 
-		ObjPtr<IDrawing2d> drawing;
-		m_pContext->GetDrawing(&drawing);
 		m_pContext->SelectSurface(m_TexHelloWorld, 0);
 
 		static const Vector2f POS[2]
@@ -277,8 +278,8 @@ namespace HelloWorld
 			Vector2f(1.0f, 1.0f)
 		};
 
-		drawing->DrawSurface(POS, UV, Color::White, IDrawing2d::MODE_TEXTURED);
-		drawing->Flush();
+		m_Drawing->DrawSurface(POS, UV, Color::White, Game::IDrawing2d::MODE_TEXTURED);
+		m_Drawing->Flush();
 	}
 
 	void HelloWorldView::SwapBuffer(bool isVblankEnabled)

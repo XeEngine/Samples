@@ -61,8 +61,8 @@ namespace ImGuiSample
 		Xe::Graphics::ContextInitDesc contextInitDesc;
 		contextInitDesc.FrameView = m_pFrameView;
 
-		auto renderingDrivers = Xe::Drivers::GetDrivers(Xe::Drivers::DriverTypeFilter_Rendering);
-		auto defaultRenderingDriver = (Xe::Drivers::Rendering::IRenderingDriver*)*renderingDrivers.begin();
+		auto renderingDrivers = Xe::Drivers::GetDrivers<Xe::Drivers::IRenderingDriver>();
+		auto defaultRenderingDriver = *renderingDrivers.begin();
 		
 		if (!defaultRenderingDriver->Factory(&m_pContext, contextInitDesc))
 		{

@@ -16,11 +16,15 @@ namespace Xe {
 }
 
 int main() {
+	Xe::ConsoleLogHandler consoleLogHandler;
+	Xe::Logger::GetLogEvent() += &consoleLogHandler;
 	Xe::Core::Main();
 	return 0;
 }
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
+	Xe::ConsoleLogHandler consoleLogHandler;
+	Xe::Logger::GetLogEvent() += &consoleLogHandler; 
 	Xe::Core::Main();
 	return 0;
 }
