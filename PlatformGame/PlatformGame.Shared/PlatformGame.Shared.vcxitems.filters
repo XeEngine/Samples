@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlatformGameView.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MapLoader.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)MapManager.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FrameMapInfo.cpp">
+      <Filter>Frames</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlatformGameView.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MapLoader.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)MapManager.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FrameMapInfo.h">
+      <Filter>Frames</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Map">
+      <UniqueIdentifier>{09fe3222-df33-4b5a-bdc2-23b582074d59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{15414d10-d14f-4cd1-a5f4-ebcb92bdf297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\map">
+      <UniqueIdentifier>{c20b97a0-fabb-443f-be74-0294301bf096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\sprite">
+      <UniqueIdentifier>{04a1209d-4414-4b60-abfd-39cffb2202a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frames">
+      <UniqueIdentifier>{a9ad1b80-c555-4d16-a074-9841b22c7111}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\cavesofgallet_tiles.json">
+      <Filter>data\map</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\sample_00.json">
+      <Filter>data\map</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\untitled.json">
+      <Filter>data\map</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\cavesofgallet_tiles.png">
+      <Filter>data\map</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

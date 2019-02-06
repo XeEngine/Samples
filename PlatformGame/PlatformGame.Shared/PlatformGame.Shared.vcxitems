@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{14267d44-97c9-417e-9966-841590af298e}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FrameMapInfo.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MapLoader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MapManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PlatformGameView.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FrameMapInfo.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MapLoader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MapManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PlatformGameView.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\cavesofgallet_tiles.json" />
+    <None Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\sample_00.json" />
+    <None Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\untitled.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)..\..\Resources\data\map\cavesofgallet_tiles.png" />
+  </ItemGroup>
+</Project>
